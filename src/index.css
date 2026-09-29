@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  @apply bg-fond font-sans text-ink antialiased;
+  overscroll-behavior-y: none;
+}
+button { -webkit-user-select: none; user-select: none; }
+:focus-visible { outline: 3px solid rgba(98, 102, 217, 0.45); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

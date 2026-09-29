@@ -1,0 +1,19 @@
+html { scroll-behavior: smooth; }
+body { overscroll-behavior-y: auto; }
+
+/* Un seul moment orchestré au chargement : le texte, puis le téléphone qui se pose */
+.hero-in > * { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.hero-in > *:nth-child(2) { animation-delay: 0.08s; }
+.hero-in > *:nth-child(3) { animation-delay: 0.16s; }
+.hero-in > *:nth-child(4) { animation-delay: 0.24s; }
+.phone-in { animation: land 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.25s both; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes land { from { opacity: 0; transform: translateY(40px) rotate(2deg); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+@media print {
+  nav, #fonctionnalites, #donnees, #adultes, #equipe, footer, aside, header { display: none !important; }
+}
